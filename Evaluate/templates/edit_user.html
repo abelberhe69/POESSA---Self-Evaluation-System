@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+  <!-- Mirrored from demo.dashboardpack.com/user-management-html/add_new_admin.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jul 2023 13:06:10 GMT -->
+  
+  <!-- nav start -->
+  {% include 'includes/head1.html' %}
+  <!-- nav end -->
+
+  <body class="crm_body_bg">
+
+      <div class="main_content_iner overly_inner">
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="page_title_box d-flex flex-wrap align-items-center justify-content-between"
+              >
+                <div class="page_title_left d-flex align-items-center">
+                  <h3 class="f_s_25 f_w_700 dark_text mr_30">Dashboard</h3>
+                  <ol class="breadcrumb page_bradcam mb-0">
+                    <li class="breadcrumb-item">
+                      <a href="javascript:void(0);">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Analytic</li>
+                  </ol>
+                </div>
+                <div class="page_title_right">
+                  <div class="page_date_button d-flex align-items-center">
+                    <img src="{% static 'img/icon/calender_icon.svg' %}" alt />
+                    August 1, 2020 - August 31, 2020
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="white_card card_height_100 mb_30">
+                <div class="white_card_header">
+                  <div class="box_header m-0">
+                    <div class="main-title">
+                      <h3 class="m-0">Confirm To Edit</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="white_card_body">
+                  
+              {% comment %} <h3>{% if id %} Edit {% else %} New {% endif %} List</h3>
+              <form method="POST" >
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="{{ form.league.id_for_label }}" class="form-label">League Name</label>
+                    {{ form.league }}
+                </div>
+                <div class="mb-3">
+                    <label for="{{ form.club_name.id_for_label }}" class="form-label">League Country</label>
+                    {{ form.club_name }}
+                </div>
+                <input type="submit" class="btn btn-primary" value="Save">
+                <button type="submit" class="btn btn-danger"><a href="{% url 'clubList' %}" style="color: white;">Cancel</a></button>
+            </form> {% endcomment %}
+
+            <h3>{% if id %} Edit {% else %} New {% endif %} List</h3>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="common_input mb_15">
+                        <label for="{{ form.username.id_for_label }}" class="form-label"></label>
+                      <input placeholder="Username" {{form.username}}
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="common_input mb_15">
+                        <label for="{{ form.first_name.id_for_label }}" class="form-label"></label>
+                      <input placeholder="First Name" {{form.first_name}}
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="common_input mb_15">
+                        <label for="{{ form.last_name.id_for_label }}" class="form-label"></label>
+                      <input placeholder="Last Name" {{form.last_name}}
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="common_input mb_15">
+                        <label for="{{ form.password.id_for_label }}" class="form-label"></label>
+                      <input type="Number" placeholder="Password" {{form.password}}>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="common_input mb_15">
+                      <label for="{{ form.department.id_for_label }}" class="form-label">Department:</label>
+                      {{ form.department }}</label>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6">
+                    <div class="common_input mb_15">
+                      <label for="{{ form.role.id_for_label }}" class="form-label">Role:</label>
+                      {{ form.role }}
+                    </div>
+                  </div>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Save">
+                <button type="submit" class="btn btn-danger"><a href="{% url 'userList' %}" style="color: white;">Cancel</a></button>
+            </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- chat start -->
+    {% include 'includes/chat.html' %}
+    <!-- chat end -->
+
+    <div id="back-top" style="display: none">
+      <a title="Go to Top" href="#">
+        <i class="ti-angle-up"></i>
+      </a>
+    </div>
+
+    <!-- scripts start -->
+    {% include 'includes/scripts1.html' %}
+    <!-- scripts end -->
+  </body>
+
+  <!-- Mirrored from demo.dashboardpack.com/user-management-html/add_new_admin.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jul 2023 13:06:10 GMT -->
+</html>

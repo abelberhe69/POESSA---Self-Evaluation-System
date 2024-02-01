@@ -1,0 +1,111 @@
+{% load static %}
+
+<nav class="sidebar">
+  <div class="logo d-flex justify-content-between">
+    {% comment %} <a class="large_logo" href="{% url 'index' %}"
+      ><img src="{% static 'img/logo.png' %}" alt
+    /></a> {% endcomment %}
+    {% comment %} <a class="small_logo" href="{% url 'index' %}"
+      ><img src="{% static 'img/mini_logo.png' %}" alt
+    /></a> {% endcomment %}
+    <div class="sidebar_close_icon d-lg-none">
+      <i class="ti-close"></i>
+    </div>
+  </div>
+  <ul id="sidebar_menu">
+
+    <li class>
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="nav_icon_small">
+          <img src="{% static 'img/menu-icon/3.svg' %}" alt />
+        </div>
+        <div class="nav_title">
+          <span>Pages</span>
+        </div>
+      </a>
+      <ul>
+        {% comment %} <li><a href="{% url 'login' %}">Login</a></li> {% endcomment %}
+        {% comment %} <li><a href="{% url 'register' %}">Register</a></li> {% endcomment %}
+        {% comment %} <li><a href="{% url 'forgotPass' %}">Forgot Password</a></li> {% endcomment %}
+      </ul>
+    </li>
+
+    <li class>
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="nav_icon_small">
+          <img src="{% static 'img/menu-icon/4.svg' %}" alt />
+        </div>
+        <div class="nav_title">
+          <span>Admins</span>
+        </div>
+      </a>
+      <ul>
+        {% comment %} <li><a href="{% url 'adminList' %}">Admin List</a></li>
+        <li><a href="{% url 'newAdmin' %}">Add New Admin</a></li> {% endcomment %}
+      </ul>
+    </li>
+
+    <li class>
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="nav_icon_small">
+          <img src="{% static 'img/menu-icon/5.svg' %}" alt />
+        </div>
+        <div class="nav_title">
+          <span>Users</span>
+        </div>
+      </a>
+      <ul>
+        {% comment %} <li><a href="{% url 'userList' %}">Users List</a></li>
+        <li><a href="{% url 'newUser' %}">Add New User</a></li> {% endcomment %}
+      </ul>
+    </li>
+
+    <li class>
+      {% comment %} <a href="{% url 'invoice' %}" aria-expanded="false"> {% endcomment %}
+        <div class="nav_icon_small">
+          <img src="{% static 'img/menu-icon/7.svg' %}" alt />
+        </div>
+        <div class="nav_title">
+          <span>Invoice</span>
+        </div>
+      </a>
+    </li>
+
+    <li class>
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="nav_icon_small">
+          <img src="{% static 'img/menu-icon/8.svg' %}" alt />
+        </div>
+        <div class="nav_title">
+          <span>Leagues & Games</span>
+        </div>
+      </a>
+      <ul>
+        {% comment %} <li><a href="{% url 'leagueList' %}">Leagues</a></li>
+        <li><a href="{% url 'clubList' %}">Clubs</a></li>
+        <li><a href="{% url 'topMatchList' %}">Top Matches</a></li>
+        <li><a href="{% url 'nextToGoList' %}">Next To Go Matches</a></li>
+        <li><a href="{% url 'trendingList' %}">Trending Matches</a></li> {% endcomment %}
+      </ul>
+    </li>
+    
+    <li class>
+      <a class="has-arrow" href="#" aria-expanded="false">
+        <div class="nav_icon_small">
+          <img src="{% static 'img/menu-icon/10.svg' %}" alt />
+        </div>
+        <div class="nav_title">
+          <span>Add Games</span>
+        </div>
+      </a>
+      <ul>
+        {% comment %} <li><a href="{% url 'formLeague' %}">Add Leagues</a></li>
+        <li><a href="{% url 'formClub' %}">Add Clubs</a></li>
+        <li><a href="{% url 'top_match_create' %}">Add Top Matches</a></li>
+        <li><a href="{% url 'formNextToGo' %}">Add Next To Go</a></li>
+        <li><a href="{% url 'formTrending' %}">Add Trending Matches</a></li> {% endcomment %}
+      </ul>
+    </li>
+
+  </ul>
+</nav>
