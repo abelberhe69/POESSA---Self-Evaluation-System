@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+  <!-- Mirrored from demo.dashboardpack.com/user-management-html/user_list.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jul 2023 13:06:10 GMT -->
+
+  <!-- nav start -->
+  {% include 'includes/head1.html' %}
+  <!-- nav end -->
+
+  <body class="crm_body_bg">
+    
+      
+
+      <div class="main_content_iner overly_inner">
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="page_title_box d-flex flex-wrap align-items-center justify-content-between"
+              >
+                <div class="page_title_left d-flex align-items-center">
+                  <h3 class="f_s_25 f_w_700 dark_text mr_30">Dashboard</h3>
+                  <ol class="breadcrumb page_bradcam mb-0">
+                    <li class="breadcrumb-item">
+                      <a href="javascript:void(0);">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Analytic</li>
+                  </ol>
+                </div>
+                <div class="page_title_right">
+                  <div class="page_date_button d-flex align-items-center">
+                    <img src="{% static 'img/icon/calender_icon.svg' %}" alt />
+                    August 1, 2020 - August 31, 2020
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="white_card card_height_100 mb_30 pt-4">
+                <div class="white_card_body">
+                  <div class="QA_section">
+                    <div class="white_box_tittle list_header">
+                      <h4>User List</h4>
+                      <div class="box_right d-flex lms_block">
+                        <div class="serach_field_2">
+                          <div class="search_inner">
+                            <form active="#">
+                              <div class="search_field">
+                                <input
+                                  type="text"
+                                  placeholder="Search content here..."
+                                />
+                              </div>
+                              <button type="submit">
+                                <i class="ti-search"></i>
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="add_button ms-2">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#addcategory"
+                            class="btn_1"
+                            >search</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="QA_table mb_30">
+                      <table class="table lms_table_active">
+                        <thead>
+                          <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for user in userList %}
+                          <tr>
+                            <td>{{user.username}}</td>
+                            <td>{{user.first_name}}</td>
+                            <td>{{user.last_name}}</td>
+                            <td>{{user.department}}</td>
+                            <td>{{user.role}}</td>
+                            <td><button type="submit" style="margin-right: 00px; border: none;"><a href="{% url 'editUser' user.id %}" class="action_btn"><i class="far fa-edit"></i></a></button></td>
+                            <td><button type="submit" style="margin-right: 00px; border: none;"><a href="{% url 'deleteUser' user.id %}" class="action_btn"><i class="fas fa-trash"></i></a></button></td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- chat start -->
+    {% include 'includes/chat.html' %}
+    <!-- chat end -->
+
+    {% comment %} <div id="back-top" style="display: none">
+      <a title="Go to Top" href="#">
+        <i class="ti-angle-up"></i>
+      </a>
+    </div> {% endcomment %}
+
+    <!-- scripts start -->
+    {% include 'includes/scripts1.html' %}
+    <!-- scripts end -->
+  </body>
+</html>

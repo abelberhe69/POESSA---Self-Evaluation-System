@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>    
+  <title>View የ6ወር ስኮርካርድ እቅድ ቅፅ</title>
+</head>
+  <!-- nav start -->
+  {% include 'includes/head1.html' %}
+  <!-- nav end -->
+
+  <body class="crm_body_bg">
+      <div class="main_content_iner overly_inner">
+        <div class="container-fluid p-0">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="page_title_box d-flex flex-wrap align-items-center justify-content-between"
+              >
+                <div class="page_title_left d-flex align-items-center">
+                  <h3 class="f_s_25 f_w_700 dark_text mr_30">Dashboard</h3>
+                  <ol class="breadcrumb page_bradcam mb-0">
+                    <li class="breadcrumb-item">
+                      <a href="javascript:void(0);">Home</a>
+                    </li>
+                    <li class="breadcrumb-item active">Analytic</li>
+                  </ol>
+                </div>
+                <div class="page_title_right">
+                  <div class="page_date_button d-flex align-items-center">
+                    <img src="{% static 'img/icon/calender_icon.svg' %}" alt />
+                    August 1, 2020 - August 31, 2020
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="white_card card_height_100 mb_30 pt-4">
+                <div class="white_card_body">
+                  <div class="QA_section">
+                    <div class="white_box_tittle list_header">
+                      <h4>Admin List</h4>
+                      <div class="box_right d-flex lms_block">
+                        <div class="serach_field_2">
+                          <div class="search_inner">
+                            <form active="#">
+                              <div class="search_field">
+                                <input
+                                  type="text"
+                                  placeholder="Search content here..."
+                                />
+                              </div>
+                              <button type="submit">
+                                <i class="ti-search"></i>
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="add_button ms-2">
+                          <a
+                            href="#"
+                            data-toggle="modal"
+                            data-target="#addcategory"
+                            class="btn_1"
+                            >search</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="QA_table mb_30">
+                      <table class="table lms_table_active">
+                        <thead>
+                          <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">የሰራተኛው ሙሉ ስም</th>
+                            <th scope="col">የስራ መደቡ መጠሪያ</th>
+                            <th scope="col">ደረጃ</th>
+                            <th scope="col">የአፈፃፀም ዘመን</th>
+                            <th scope="col">View</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for view in View_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_list %}
+                          <tr>
+                            <td>{{view.user}}</td>
+                            <td>{{view.የሰራተኛው_ሙሉ_ስም}}</td>
+                            <td>{{view.የስራ_መደቡ_መጠሪያ}}</td>
+                            <td>{{view.ደረጃ}}</td>
+                            <td>{{view.d1}} | {{view.m1}} | {{view.y1}} - {{view.d2}} | {{view.m2}} | {{view.y2}}</td>
+                            <td><a href="{% url "Print_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ" form_id=view.id %}">
+                              <img src="{% static 'img/view.png' %}"></a></td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- chat start -->
+    {% include 'includes/chat.html' %}
+    <!-- chat end -->
+
+    <div id="back-top" style="display: none">
+      <a title="Go to Top" href="#">
+        <i class="ti-angle-up"></i>
+      </a>
+    </div>
+
+    <!-- scripts start -->
+    {% include 'includes/scripts1.html' %}
+    <!-- scripts end -->
+  </body>
+</html>

@@ -1,0 +1,20 @@
+                        {% for list in formView %}
+                          <tr>
+                            <td>{{list.ምዘናው_የተሞላለት_ስም}}</td>
+                            <td>{{list.ምዘናውን_የሞላው_ኃላፊ_ስም}}</td>
+                            <td>{{list.d1}} | {{list.m1}} | {{list.y1}} - {{list.d1}} | {{list.m1}} | {{list.y1}}</td>
+                            <td>{{list.value1}}</td>
+                            <td>{{list.value1}}</td>
+                            <td>{{list.value2}}</td>
+                            <td>{{list.value3}}</td>
+                            <td>{{list.value4}}</td>
+                            <td>{{list.value5}}</td>
+                            <td>{{list.value6}}</td>
+                            <td>{{list.value7}}</td>
+                            <td>{{list.value8}}</td>
+                            <td>{{list.value9}}</td>
+                            <td>{{list.value10}}</td>
+                            {% comment %} <td><a href="{% url "printForm" form_id=admin.id %}"><td> {% endcomment %}
+                              {% comment %} <img src="{% static 'img/view.png' %}"></a></td> {% endcomment %}
+                          </tr>
+                        {% endfor %}

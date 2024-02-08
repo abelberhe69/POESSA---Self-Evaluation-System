@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 # Create your views here.
 
@@ -22,9 +23,18 @@ def user_login(request):
         if form.is_valid():
             cd = form.cleaned_data
             user = authenticate(request, username=cd['username'], password=cd['password'])
-            if user is not None:
-                    login(request, user)
-                    return redirect('/homepage')
+            if (user is not None and user.is_superuser):
+                login(request, user)
+                return redirect('admin-dashboard')
+            elif user is not None and user.role == 'director':
+                login(request, user)
+                return redirect('director-dashboard')
+            elif user is not None and user.role == 'team_leader':
+                login(request, user)
+                return redirect('team-leader-dashboard')
+            elif user is not None and user.role == 'expert':
+                login(request, user)
+                return redirect('homepage')
             else:
                 return render(request, 'login_form.html', {'form': form, 'error_message': 'Invalid login credentials'})
     else:

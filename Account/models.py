@@ -13,7 +13,7 @@ class CustomUser(AbstractUser):
     department = models.CharField(max_length=20, choices=DEP_CHOICES)
     ROLE_CHOICES = [
         ('director', 'Director'),
-        ('team leader', 'Team leader'),
+        ('team_leader', 'Team leader'),
         ('expert', 'Expert'),
     ]
     role = models.CharField(max_length=20, choices=ROLE_CHOICES)
