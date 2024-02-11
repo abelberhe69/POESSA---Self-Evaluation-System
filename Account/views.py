@@ -1,21 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from django.contrib.auth import authenticate, login
-from django.contrib import messages
+from django.contrib import messages, auth
 
 # Create your views here.
-
-# def admin_profile(request):
-#     if request.method == 'POST':
-#         form = CustomUserCreationForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-            
-#             form = CustomUserCreationForm()   
-#     else:
-#         form = CustomUserCreationForm()
-
-#     return render(request, 'register_form.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -41,8 +29,6 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'login_form.html', {'form': form})
 
-
-
 def registration(request):
     if request.method == 'POST':
         user_form = CustomUserCreationForm(request.POST)
@@ -55,3 +41,7 @@ def registration(request):
     else:
         user_form = CustomUserCreationForm()
     return render(request, 'register_form.html', {'user_form': user_form})
+
+def logout(request):
+        auth.logout(request)
+        return redirect('/user_login')

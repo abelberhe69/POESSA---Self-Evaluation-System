@@ -7,10 +7,12 @@ from Account.models import CustomUser
 from Account.forms import CustomUserCreationForm
 from Account.decorater import *
 from django.contrib.auth.decorators import login_required
+from Account.views import *
 
 @login_required
 def homepage(request):
     context = {
+        'user' : request.user,
     }
     return render(request, 'Expert/homepage.html', context)
 

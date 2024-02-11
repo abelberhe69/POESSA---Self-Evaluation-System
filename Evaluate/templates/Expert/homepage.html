@@ -20,13 +20,14 @@
 </head>
 
 <body>
-  <div class="shadow p-3 mb-5 bg-body rounded">
+  <div class="p-3 mb-5 bg-body rounded">
     <div class="container-fluid">
-      <h1>Welcome to POESSA, where do you want to go?</h1>
+      <h1>Welcome <span style="text-transform: capitalize;"><b>{{user}} ({{user.role}})</b></span>, where do you want to go?</h1>
+      <a href="{% url "logout" %}" class="btn btn-danger" style="margin-left: 94%;">Log-out</a>
       <div class="container">
         <div class="row">
           <div class="col">
-            <div class="card" style="width: 22rem; border-color: black;">
+            <div class="card shadow" style="width: 22rem; border-color: black;">
               <div class="card-body">
                 <h5 class="card-title">Add የ6ወር ስኮርካርድ እቅድ ቅፅ</h5>
                 <p class="card-text">
@@ -39,7 +40,7 @@
           </div>
 
           <div class="col">
-            <div class="card" style="width: 22rem; border-color: black;">
+            <div class="card shadow" style="width: 22rem; border-color: black;">
               <div class="card-body">
                 <h5 class="card-title">Add የ6ወር የባህሪ መመዘኛ ቅፅ</h5>
                 <p class="card-text">
@@ -52,7 +53,7 @@
           </div>
 
           <div class="col">
-            <div class="card" style="width: 22rem; border-color: black;">
+            <div class="card shadow" style="width: 22rem; border-color: black;">
               <div class="card-body">
                 <h5 class="card-title">Add የድርጊት መርሃ ግብር ቅፅ</h5>
                 <p class="card-text">
@@ -66,7 +67,7 @@
         </div><br>
         <div class="row">
           <div class="col">
-            <div class="card" style="width: 22rem; border-color: black;">
+            <div class="card shadow" style="width: 22rem; border-color: black;">
               <div class="card-body">
                 <h5 class="card-title">View የ6ወር ስኮርካርድ እቅድ ቅፅ</h5>
                 <p class="card-text">
@@ -79,7 +80,7 @@
           </div>
 
           <div class="col">
-            <div class="card" style="width: 22rem; border-color: black;">
+            <div class="card shadow" style="width: 22rem; border-color: black;">
               <div class="card-body">
                 <h5 class="card-title">View የ6ወር የባህሪ መመዘኛ ቅፅ</h5>
                 <p class="card-text">
@@ -92,7 +93,7 @@
           </div>
 
           <div class="col">
-            <div class="card" style="width: 22rem; border-color: black;">
+            <div class="card shadow" style="width: 22rem; border-color: black;">
               <div class="card-body">
                 <h5 class="card-title">View የድርጊት መርሃ ግብር ቅፅ</h5>
                 <p class="card-text">
