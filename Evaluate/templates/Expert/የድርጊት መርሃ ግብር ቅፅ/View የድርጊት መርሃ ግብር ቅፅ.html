@@ -26,12 +26,6 @@
                     <li class="breadcrumb-item active">Analytic</li>
                   </ol>
                 </div>
-                {% comment %} <div class="page_title_right">
-                  <div class="page_date_button d-flex align-items-center">
-                    <img src="{% static 'img/icon/calender_icon.svg' %}" alt />
-                    August 1, 2020 - August 31, 2020
-                  </div>
-                </div> {% endcomment %}
               </div>
             </div>
           </div>
@@ -43,30 +37,6 @@
                     <div class="white_box_tittle list_header">
                       <h4>Form List</h4>
                       <div class="box_right d-flex lms_block">
-                        {% comment %} <div class="serach_field_2">
-                          <div class="search_inner">
-                            <form active="#">
-                              <div class="search_field">
-                                <input
-                                  type="text"
-                                  placeholder="Search content here..."
-                                />
-                              </div>
-                              <button type="submit">
-                                <i class="ti-search"></i>
-                              </button>
-                            </form>
-                          </div>
-                        </div>
-                        <div class="add_button ms-2">
-                          <a
-                            href="#"
-                            data-toggle="modal"
-                            data-target="#addcategory"
-                            class="btn_1"
-                            >search</a
-                          >
-                        </div> {% endcomment %}
                       </div>
                     </div>
                     <div class="QA_table mb_30">
@@ -91,8 +61,8 @@
                             <td>{{view.የስራ_መደቡ_መጠሪያ}}</td>
                             <td>{{view.ደረጃ}}</td>
                             <td>{{view.d1}} | {{view.m1}} | {{view.y1}} - {{view.d2}} | {{view.m2}} | {{view.y2}}</td>
-                            <td><a href="{% url "Print_የድርጊት_መርሃ_ግብር_ቅፅ" form_id=view.id %}">
-                              <img src="{% static 'img/view.png' %}"></a></td>
+                            {% comment %} <td><a href="{% url "Print_የድርጊት_መርሃ_ግብር_ቅፅ" form_id=view.id %}">
+                              <img src="{% static 'img/view.png' %}"></a></td> {% endcomment %}
                           </tr>
                           {% endfor %}
                         </tbody>

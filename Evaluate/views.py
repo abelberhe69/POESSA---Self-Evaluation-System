@@ -74,7 +74,7 @@ def team_leader_index(request):
     return render(request, 'Team Leader/index.html')
 
 
-# የ6ወር ስኮርካርድ እቅድ ቅፅ
+# Expert የ6ወር ስኮርካርድ እቅድ ቅፅ
 @login_required
 def Add_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request):
     form = የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form()
@@ -107,6 +107,72 @@ def Print_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request, form_id):
     return render(request, 'Expert/የ6ወር ስኮርካርድ እቅድ ቅፅ/Print የ6ወር ስኮርካርድ እቅድ ቅፅ.html', context)
 
 
+# Team Leader የ6ወር ስኮርካርድ እቅድ ቅፅ
+@login_required
+def Add_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request):
+    form = የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form()
+    if request.method == 'POST':
+        form = የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form(request.POST)
+        if form.is_valid():
+            formAdd = form.save(commit=False)
+            formAdd.user = request.user
+            form.save()
+        else:
+            form = የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form(request.POST)
+    context = {
+        'የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form':form
+    }
+    return render(request, 'Team Leader/የ6ወር ስኮርካርድ እቅድ ቅፅ/Add የ6ወር ስኮርካርድ እቅድ ቅፅ.html', context)
+
+@login_required
+def View_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request):
+    user = request.user
+    context = {
+        'View_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_list' : የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_model.objects.filter(user = user)
+    }
+    return render(request, 'Team Leader/የ6ወር ስኮርካርድ እቅድ ቅፅ/View የ6ወር ስኮርካርድ እቅድ ቅፅ.html', context)
+
+@login_required
+def Print_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request, form_id):
+    context = {
+        'Print_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form' : የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_model.objects.filter(id=form_id)
+    }
+    return render(request, 'Team Leader/የ6ወር ስኮርካርድ እቅድ ቅፅ/Print የ6ወር ስኮርካርድ እቅድ ቅፅ.html', context)
+
+
+# Director የ6ወር ስኮርካርድ እቅድ ቅፅ
+@login_required
+def Add_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request):
+    form = የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form()
+    if request.method == 'POST':
+        form = የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form(request.POST)
+        if form.is_valid():
+            formAdd = form.save(commit=False)
+            formAdd.user = request.user
+            form.save()
+        else:
+            form = የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form(request.POST)
+    context = {
+        'የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form':form
+    }
+    return render(request, 'Director/የ6ወር ስኮርካርድ እቅድ ቅፅ/Add የ6ወር ስኮርካርድ እቅድ ቅፅ.html', context)
+
+@login_required
+def View_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request):
+    user = request.user
+    context = {
+        'View_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_list' : የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_model.objects.filter(user = user)
+    }
+    return render(request, 'Director/የ6ወር ስኮርካርድ እቅድ ቅፅ/View የ6ወር ስኮርካርድ እቅድ ቅፅ.html', context)
+
+@login_required
+def Print_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ(request, form_id):
+    context = {
+        'Print_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form' : የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_model.objects.filter(id=form_id)
+    }
+    return render(request, 'Director/የ6ወር ስኮርካርድ እቅድ ቅፅ/Print የ6ወር ስኮርካርድ እቅድ ቅፅ.html', context)
+
+
 # የ6ወር የባህሪ መመዘኛ ቅፅ 1
 @login_required
 def Add_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1(request):
@@ -122,21 +188,21 @@ def Add_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1(request):
     context = {
         'የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1_form':form1
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 1/Add የ6ወር የባህሪ መመዘኛ ቅፅ 1.html', context=context)
+    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/Add የ6ወር የባህሪ መመዘኛ ቅፅ 1.html', context=context)
 
 @login_required
 def View_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1(request):
     context = {
         'View_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1_list' : የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1_model.objects.all()
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 1/View የ6ወር የባህሪ መመዘኛ ቅፅ 1.html', context)
+    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/View የ6ወር የባህሪ መመዘኛ ቅፅ 1.html', context)
 
 @login_required
 def Print_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1(request, form_id):
     context = {
         'Print_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1_form' : የ6ወር_የባህሪ_መመዘኛ_ቅፅ_1_model.objects.filter(id=form_id)
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 1/Print የ6ወር የባህሪ መመዘኛ ቅፅ 1.html', context)
+    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/Print የ6ወር የባህሪ መመዘኛ ቅፅ 1.html', context)
 
 
 # የ6ወር የባህሪ መመዘኛ ቅፅ 2
@@ -154,21 +220,21 @@ def Add_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2(request):
     context = {
         'የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2_form':form2
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 2/Add የ6ወር የባህሪ መመዘኛ ቅፅ 2.html', context=context)
+    return render(request, 'Team Leader/የ6ወር የባህሪ መመዘኛ ቅፅ/Add የ6ወር የባህሪ መመዘኛ ቅፅ 2.html', context=context)
 
 @login_required
 def View_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2(request):
     context = {
         'View_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2_list' : የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2_model.objects.all()
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 2/View የ6ወር የባህሪ መመዘኛ ቅፅ 2.html', context)
+    return render(request, 'Team Leader/የ6ወር የባህሪ መመዘኛ ቅፅ/View የ6ወር የባህሪ መመዘኛ ቅፅ 2.html', context)
 
 @login_required
 def Print_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2(request, form_id):
     context = {
         'Print_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2_form' : የ6ወር_የባህሪ_መመዘኛ_ቅፅ_2_model.objects.filter(id=form_id)
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 2/Print የ6ወር የባህሪ መመዘኛ ቅፅ 2.html', context)
+    return render(request, 'Team Leader/የ6ወር የባህሪ መመዘኛ ቅፅ/Print የ6ወር የባህሪ መመዘኛ ቅፅ 2.html', context)
 
 
 # የ6ወር የባህሪ መመዘኛ ቅፅ 3
@@ -186,24 +252,24 @@ def Add_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3(request):
     context = {
         'የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3_form':form3
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 3/Add የ6ወር የባህሪ መመዘኛ ቅፅ 3.html', context=context)
+    return render(request, 'Director/የ6ወር የባህሪ መመዘኛ ቅፅ/Add የ6ወር የባህሪ መመዘኛ ቅፅ 3.html', context=context)
 
 @login_required
 def View_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3(request):
     context = {
         'View_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3_list' : የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3_model.objects.all()
     }
-    return render(request, 'የ6ወር የባህሪ መመዘኛ ቅፅ/View የ6ወር የባህሪ መመዘኛ ቅፅ 3.html', context)
+    return render(request, 'Director/የ6ወር የባህሪ መመዘኛ ቅፅ/View የ6ወር የባህሪ መመዘኛ ቅፅ 3.html', context)
 
 @login_required
 def Print_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3(request, form_id):
     context = {
         'Print_የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3_form' : የ6ወር_የባህሪ_መመዘኛ_ቅፅ_3_model.objects.filter(id=form_id)
     }
-    return render(request, 'Expert/የ6ወር የባህሪ መመዘኛ ቅፅ/የ6ወር የባህሪ መመዘኛ ቅፅ 3/Print የ6ወር የባህሪ መመዘኛ ቅፅ 3.html', context)
+    return render(request, 'Director/የ6ወር የባህሪ መመዘኛ ቅፅ/Print የ6ወር የባህሪ መመዘኛ ቅፅ 3.html', context)
 
 
-# የድርጊት መርሃ ግብር ቅፅ
+# Expert የድርጊት መርሃ ግብር ቅፅ
 @login_required
 def Add_የድርጊት_መርሃ_ግብር_ቅፅ(request):
     form = የድርጊት_መርሃ_ግብር_ቅፅ_form()
@@ -233,3 +299,67 @@ def Print_የድርጊት_መርሃ_ግብር_ቅፅ(request, form_id):
         'Print_የድርጊት_መርሃ_ግብር_ቅፅ_form' : የድርጊት_መርሃ_ግብር_ቅፅ_model.objects.filter(id=form_id)
     }
     return render(request, 'Expert/የድርጊት መርሃ ግብር ቅፅ/Print የድርጊት መርሃ ግብር ቅፅ.html', context)
+
+
+# Team Leader የድርጊት መርሃ ግብር ቅፅ
+@login_required
+def Add_የድርጊት_መርሃ_ግብር_ቅፅ(request):
+    form = የድርጊት_መርሃ_ግብር_ቅፅ_form()
+    if request.method == 'POST':
+        form = የድርጊት_መርሃ_ግብር_ቅፅ_form(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+        else:
+            form = የድርጊት_መርሃ_ግብር_ቅፅ_form(request.POST)
+    context = {
+        'የድርጊት_መርሃ_ግብር_ቅፅ_form':form
+    }
+    return render(request, 'Team Leader/የድርጊት መርሃ ግብር ቅፅ/Add የድርጊት መርሃ ግብር ቅፅ.html', context=context)
+
+@login_required
+def View_የድርጊት_መርሃ_ግብር_ቅፅ(request):
+    context = {
+        'View_የድርጊት_መርሃ_ግብር_ቅፅ_list' : የድርጊት_መርሃ_ግብር_ቅፅ_model.objects.all()
+    }
+    return render(request, 'Team Leader/የድርጊት መርሃ ግብር ቅፅ/View የድርጊት መርሃ ግብር ቅፅ.html', context)
+
+@login_required
+def Print_የድርጊት_መርሃ_ግብር_ቅፅ(request, form_id):
+    context = {
+        'Print_የድርጊት_መርሃ_ግብር_ቅፅ_form' : የድርጊት_መርሃ_ግብር_ቅፅ_model.objects.filter(id=form_id)
+    }
+    return render(request, 'Team Leader/የድርጊት መርሃ ግብር ቅፅ/Print የድርጊት መርሃ ግብር ቅፅ.html', context)
+
+
+# Director የድርጊት መርሃ ግብር ቅፅ
+@login_required
+def Add_የድርጊት_መርሃ_ግብር_ቅፅ(request):
+    form = የድርጊት_መርሃ_ግብር_ቅፅ_form()
+    if request.method == 'POST':
+        form = የድርጊት_መርሃ_ግብር_ቅፅ_form(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user = request.user
+            form.save()
+        else:
+            form = የድርጊት_መርሃ_ግብር_ቅፅ_form(request.POST)
+    context = {
+        'የድርጊት_መርሃ_ግብር_ቅፅ_form':form
+    }
+    return render(request, 'Director/የድርጊት መርሃ ግብር ቅፅ/Add የድርጊት መርሃ ግብር ቅፅ.html', context=context)
+
+@login_required
+def View_የድርጊት_መርሃ_ግብር_ቅፅ(request):
+    context = {
+        'View_የድርጊት_መርሃ_ግብር_ቅፅ_list' : የድርጊት_መርሃ_ግብር_ቅፅ_model.objects.all()
+    }
+    return render(request, 'Director/የድርጊት መርሃ ግብር ቅፅ/View የድርጊት መርሃ ግብር ቅፅ.html', context)
+
+@login_required
+def Print_የድርጊት_መርሃ_ግብር_ቅፅ(request, form_id):
+    context = {
+        'Print_የድርጊት_መርሃ_ግብር_ቅፅ_form' : የድርጊት_መርሃ_ግብር_ቅፅ_model.objects.filter(id=form_id)
+    }
+    return render(request, 'Director/የድርጊት መርሃ ግብር ቅፅ/Print የድርጊት መርሃ ግብር ቅፅ.html', context)

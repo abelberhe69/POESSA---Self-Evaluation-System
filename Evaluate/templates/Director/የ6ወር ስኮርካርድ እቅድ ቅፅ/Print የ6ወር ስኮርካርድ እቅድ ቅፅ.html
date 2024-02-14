@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print የ6ወር ስኮርካርድ እቅድ ቅፅ</title>
+    <link rel="icon" type="image/x-icon" href="Images/faviconPOESSA.ico" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+    </style>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        font-size: 12px
+      }
+    </style>
+  </head>
+
+  <body>
+    {% for print in Print_የ6ወር_ስኮርካርድ_እቅድ_ቅፅ_form %}
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <h5 style="margin-left: 400px"><b><u>የግለሰብ ፈፃሚ የ6 ወር ስኮርካርድ እቅድ ቅፅ - 10</u></b></h5><br><br>
+      <div>
+        <h6><b>የሰራተኛው ሙሉ ስም ፡ {{print.የሰራተኛው_ሙሉ_ስም}}</b></h6>
+        <h6><b>የስራ መደቡ መጠሪያ ፡ {{print.የስራ_መደቡ_መጠሪያ}}</b></h6>
+        <h6><b>የአፈፃፀም ዘመን ፡ </b></h6>
+        <h6><b>ደረጃ ፡ {{print.ደረጃ}}</b></h6>
+      </div>
+    </nav>
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-10">
+        <div class="table-responsive">
+          <table class="table">
+            <tr>
+              <th>እይታ</th>
+              <th>የዕይታ ክብደት</th>
+              <th>የስራ ሂደቱ ዓመታዊ ግቦች</th>
+              <th>የፈጻሚ ግቦች</th>
+              <th>የግብ ክብደት</th>
+              <th>መለኪያ</th>
+              <th>መለኪያ ክብደት</th>
+              <th>መነሻ</th>
+              <th>ዒላማ</th>
+              <th>በግለሰብ ደረጃ የሚያስፈልጉ ስትራቴጂያዊ እርምጃዎች</th>
+              <th>የመረጃ ምንጭ</th>
+              <th>ክንውን</th>
+              <th>የፈፃሚ ግቦችና መለኪያዎች ማብራሪያ</th>
+            </tr>
+      
+            <tr>
+              <td>ተገልጋይ</td>
+              <td>20</td>
+              <td>የተገልጋዮችን እርካታ ማሳደግ</td>
+              <td>ለኢንፎርሜሽን ኮሙኒኬሽን ቴክኖሎጂ ተገልጋዮች የሚሰጥ ድጋፍ እርካታን ማሳደግ</td>
+              <td>20</td>
+              <td>የረኩ/ያልረኩ ተገልጋዮች መቶኛ</td>
+              <td>20</td>
+              <td>100</td>
+              <td>92</td>
+              <td>{{print.ተገልጋይ_1}}</td>
+              <td>በተገልጋዩ በሚሞሉ መጠይቆች</td>
+              <td>{{print.ተገልጋይ_2}}</td>
+              <td>{{print.ተገልጋይ_3}}</td>
+            </tr>
+      
+            <tr>
+              <td rowspan="2">ፋይናንስ</td>
+              <td rowspan="2">15</td>
+              <td rowspan="2">የበጀት ውጤታማነትን ማሳደግ</td>
+              <td>ለዳይሬክሬቱ የተመደበውን በጀት ብኩንነት መቀነስ</td>
+              <td>7</td>
+              <td>የቀነሰ ክብደት በመቶኛ</td>
+              <td>10</td>
+              <td>67</td>
+              <td rowspan="2">95</td>
+              <td>{{print.ፋይናንስ_1}}</td>
+              <td>የአፈጻጸም ሪፖርት</td>
+              <td>{{print.ፋይናንስ_3}}</td>
+              <td>{{print.ፋይናንስ_5}}</td>
+            </tr>
+            <tr>
+              <td>ለዳይሬክቶሬቱ የተመደበውን በጀት በቁጠባ የመጠቀም ባህልን ማሳደግ</td>
+              <td>8</td>
+              <td>በእቅድና በአፈጻጸም መሀከል ያለው ልዩነት</td>
+              <td>5</td>
+              <td>18</td>
+              <td>{{print.ፋይናንስ_2}}</td>
+              <td>የበጀት ሪፖርት</td>
+              <td>{{print.ፋይናንስ_4}}</td>
+              <td>{{print.ፋይናንስ_6}}</td>
+            </tr>
+      
+            <tr>
+              <td rowspan="7">የውስጥ አሰራር</td>
+              <td rowspan="7">40</td>
+              <td rowspan="7">ዘመናዊ ቴክኖሎጂ ተጠቃሚነት ማሳደግ</td>
+              <td>የምዝገባና የመዋጮ ሲስተሞች ስራ ላይ መሆናቸውን መከታተል እና ለሚሰሩ ባለሙያዎች የተጠቃሚ መለያ እና የይለፍ ቃል መስጠት</td>
+              <td>5</td>
+              <td>በተሰራው መጠን</td>
+              <td rowspan="4">30</td>
+              <td rowspan="4">100%</td>
+              <td rowspan="4">100%</td>
+              <td rowspan="4">{{print.የውስጥ_አሰራር_1}}</td>
+              <td rowspan="4">የተሰሩ ስራዎች ሪፖርት</td>
+              <td rowspan="4">{{print.የውስጥ_አሰራር_2}}</td>
+              <td rowspan="4">{{print.የውስጥ_አሰራር_3}}</td>
+            </tr>
+            <tr>
+              <td>ሁሉንም ሲስተሞች ለተጠቃሚዎች ማመቻቸትና አፈፃፀሙን እስከ ቅ/ፅ/ቤት ድረስ መከታተልና ድጋፍ መስጠት</td>
+              <td>7</td>
+              <td>በየጊዜው</td>
+            </tr>
+            <tr>
+              <td>ለተጠቃሚዎች አስፈላጊውን ሶፍትዌር ይጭናል የተለያዩ አፕሊኬሽን ፓኬጅ አጥንቶ ለተጠቃሚዎች ማሳየት</td>
+              <td>5</td>
+              <td>በተጠየቀው ጊዜ</td>
+            </tr>
+            <tr>
+              <td>ለተሰሩት ሲስተሞች ዶክመንቴሽኖችን ማዘጋጀት</td>
+              <td>5</td>
+              <td>በተያዘው እቅድ መሰረት</td>
+            </tr>
+            <tr>
+              <td>በስራ ላይ ያሉ ሲስተሞች ላይ ያጋጠሙ ችግሮችን መፍታት እና አፈፃፀማቸውን ሪፖርት ማድረግ</td>
+              <td>3</td>
+              <td>በተያዘው እቅድ መሰረት</td>
+              <td rowspan="3">10</td>
+              <td rowspan="3">100%</td>
+              <td rowspan="3">100%</td>
+              <td rowspan="3">{{print.የውስጥ_አሰራር_4}}</td>
+              <td rowspan="3">የተሰሩ ስራዎች ሪፖርት</td>
+              <td rowspan="3">{{print.የውስጥ_አሰራር_5}}</td>
+              <td rowspan="3">{{print.የውስጥ_አሰራር_6}}</td>
+            </tr>
+            <tr>
+              <td>በቴክኖሎጂ ሚደገፉ አሰራሮችን መለየት ፣ ማጥናት ፣ ማልማት ፣ መከታተል ፣ እንዲጠቀሙበት ማድረግ</td>
+              <td>15</td>
+              <td>በተያዘው እቅድ መሰረት</td>
+            </tr>
+            <tr>
+              <td>ከሲስተም ላይ መረጃዎችን እያወጡ ለሚመለከታቸው መስጠት</td>
+              <td>2</td>
+              <td>በየጊዜው</td>
+            </tr>
+      
+            <tr>
+              <td rowspan="3">መማርና እድገት</td>
+              <td rowspan="3">25</td>
+              <td rowspan="3">የአገልግሎት አሰጣጥ ጥራትና ቅልጥፍናን ማሻሻል</td>
+              <td>ለለሙ ሲሰተሞችን ለባለሙያዎች እንደአስፈላጊነቱ ስልጠናዎች እንዲሠጡ ማዘጋጀት ፣ መደገፍ ፣ እንዲሠጥ ማድረግ</td>
+              <td>10</td>
+              <td>በተሰጠው ስልጠና ብዛት</td>
+              <td>10</td>
+              <td>100</td>
+              <td>95</td>
+              <td>{{print.መማርና_እድገት_1}}</td>
+              <td>{{print.መማርና_እድገት_2}}</td>
+              <td>{{print.መማርና_እድገት_3}}</td>
+              <td>{{print.መማርና_እድገት_4}}</td>
+            </tr>
+            <tr>
+              <td>ለውጥ የሚያመጡ አዳዲስ ሃሳቦችንና አሰራሮችን ማመንጨትና መተግበር</td>
+              <td>10</td>
+              <td>በስልጠና</td>
+              <td>10</td>
+              <td>100</td>
+              <td>95</td>
+              <td>{{print.መማርና_እድገት_5}}</td>
+              <td>{{print.መማርና_እድገት_6}}</td>
+              <td>{{print.መማርና_እድገት_7}}</td>
+              <td>{{print.መማርና_እድገት_8}}</td>
+            </tr>
+            <tr>
+              <td>መልካም ስነምግባር መላበስ ታታሪና ስራ ወዳድ መሆንን ከኪራይ ሰብሳቢነት አመለካከት በተግባር ነጻ መሆን</td>
+              <td>5</td>
+              <td>መልካም የሆነ ስነምግባር</td>
+              <td>5</td>
+              <td>100</td>
+              <td>100</td>
+              <td>{{print.መማርና_እድገት_9}}</td>
+              <td>{{print.መማርና_እድገት_10}}</td>
+              <td>{{print.መማርና_እድገት_11}}</td>
+              <td>{{print.መማርና_እድገት_12}}</td>
+            </tr>
+      
+          </table>
+          </div>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
+  

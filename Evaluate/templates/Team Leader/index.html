@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Homepage</title>
+  <title>{{user}} | Team Leader</title>
   <link rel="icon" type="image/x-icon" href="Images/faviconPOESSA.ico" />
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,7 +23,7 @@
   <div class="p-3 mb-5 bg-body rounded">
     <div class="container-fluid">
       <h1>Welcome <span style="text-transform: capitalize;"><b>{{user}} ({{user.role}})</b></span>, where do you want to go?</h1>
-      <a href="{% url "logout" %}" class="btn btn-danger" style="margin-left: 94%;">Log-out</a>
+      <a href="{% url "logout" %}" class="btn btn-danger" style="margin-left: 92%; margin-top: -80px;">Log-out</a>
       <div class="container">
         <div class="row">
           <div class="col">
