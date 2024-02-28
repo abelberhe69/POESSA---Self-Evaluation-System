@@ -1,36 +1,3 @@
-# from django import forms
-# from .models import *
-# from django.contrib.auth.forms import UserCreationForm
-
-# class CustomUserCreationForm(forms.Form):
-#     first_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={
-#         'class' : 'form-control',
-#         'placeholder' : 'Your First Name'
-#     }))
-#     last_name = forms.CharField(max_length=30, widget=forms.TextInput(attrs={
-#         'class' : 'form-control',
-#         'placeholder' : 'Your Last Name'
-#     }))
-#     username = forms.CharField(max_length=30, widget=forms.TextInput(attrs={
-#         'class' : 'form-control',
-#         'placeholder' : 'Enter your Username',
-#         'autocomplete': 'off' 
-#     }))
-#     password1 = forms.CharField( max_length=40, label='Password' ,widget=forms.PasswordInput(attrs={
-#         'class' : 'form-control',
-#         'placeholder' : 'Enter Your Password',
-#         'autocomplete': 'off'
-#     }))
-#     password2 = forms.CharField( max_length=40, label='Confirm Password', widget=forms.PasswordInput(attrs={
-#         'class' : 'form-control',
-#         'placeholder' : 'Confirm Password',
-#         'autocomplete': 'off'
-#     }))
-
-#     is_superuser = forms.BooleanField(required=False, widget=forms.CheckboxInput(attrs={
-#         'class' : 'form-check-input'
-#     }))
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import CustomUser
@@ -93,14 +60,20 @@ class LoginForm(forms.Form):
 class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ('username', 'first_name', 'last_name', 'password1', 'password2', 'department', 'role')
+        fields = ('username', 'first_name', 'last_name', 'password1', 'password2', 'Leader', 'department', 'team', 'role')
         widgets = {
             'username': forms.TextInput(attrs={'class': 'form-control'}),
             'first_name': forms.TextInput(attrs={'class': 'form-control'}),
             'last_name': forms.TextInput(attrs={'class': 'form-control'}),
             'password1': forms.PasswordInput(attrs={'class': 'form-control'}),
             'password2': forms.PasswordInput(attrs={'class': 'form-control'}),
+            'Leader': forms.Select(attrs={
+                'class' :'form-select'
+            }),
             'department': forms.Select(choices=CustomUser.DEP_CHOICES, attrs={
+                'class' :'form-select'
+            }),
+            'team': forms.Select(choices=CustomUser.TEAM_CHOICES,attrs={
                 'class' :'form-select'
             }),
             'role': forms.Select(choices=CustomUser.ROLE_CHOICES,attrs={
